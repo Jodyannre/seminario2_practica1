@@ -9,6 +9,7 @@ def main():
     salir = False
     #Obtener opción del menú
     while not salir:
+        os.system("cls")
         #ingreso.imprimirMenu()
         opcion = ingreso.solicitarNumero()
         #Ejecutar operación

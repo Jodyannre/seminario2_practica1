@@ -104,7 +104,13 @@ def ejecutar(num,cursor):
         case 4:
             modificarModelo(16,cursor)
         case 5:
-            ejecutarConsultas(cursor)
+            try:
+                ejecutarConsultas(cursor)
+            except:
+                os.system("cls")
+                print("No hay información cargada para realizar las consultas.")
+                input("")
+                
 
 
 def ejecutarConsultas(cursor):
@@ -212,6 +218,7 @@ def consulta4_10(num,cursor):
 
 
 def escribirArchivo(datos):
+    print(datos)
     try:
         with open('C:\\Users\\Joddie\\Desktop\\resultados.txt', 'a') as f:
             f.write(datos)
@@ -240,6 +247,7 @@ def listToString(lista):
 
 
 def extrarInformacion(cursor):
+    os.system("cls")
     #Obtener ruta del archivo
     ruta = input("Ingrese la ruta del archivo: ")
     try:
